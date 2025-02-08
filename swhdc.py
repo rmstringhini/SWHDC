@@ -79,7 +79,6 @@ class Conv2dSamePadding(_ConvNd):
 
 def conv2d_same_padding(input, weight, bias=None, stride=1, padding=1, dilation=1, groups=1, padding_mode='zeros'):
     dilation = torch.nn.modules.utils._pair(dilation)
-    #print("stride ->", stride)
     input_rows = input.size(2)
     filter_rows = weight.size(2)
     effective_filter_size_rows = (filter_rows - 1) * dilation[1] + 1
@@ -101,14 +100,13 @@ def conv2d_same_padding(input, weight, bias=None, stride=1, padding=1, dilation=
                   dilation=dilation, groups=groups)
 
 
-class SDCLayerSharedWeights(nn.Module):
-    def __init__(self, input_size, n_conv, kernel_size, n_kernels, stride, padding): # image_size
-        super(SDCLayerSharedWeights, self).__init__()
+class SWHDCModule(nn.Module):
+    def __init__(self, input_size, n_conv, kernel_size, n_kernels, stride, padding):
+        super(SWHDCModule, self).__init__()
         self.input_size = input_size
         self.n_conv = n_conv
         self.kernel_size = kernel_size
         self.n_kernels = n_kernels
-        #self.dilations = dilations
         self.stride = stride
         self.padding = padding
         
