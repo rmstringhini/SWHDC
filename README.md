@@ -6,4 +6,4 @@ Traditional convolutional neural networks (CNNs) face significant challenges whe
 
 
 ----
-The swhdc.py file contains the complete module proposed in Spherically-Weighted Horizontally Dilated Convolutions for Omnidirectional Image Processing (https://ieeexplore.ieee.org/document/10716273).
+The swhdc.py file contains the complete convolutional block proposed in Spherically-Weighted Horizontally Dilated Convolutions for Omnidirectional Image Processing (https://ieeexplore.ieee.org/document/10716273).
