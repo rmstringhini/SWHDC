@@ -100,9 +100,9 @@ def conv2d_same_padding(input, weight, bias=None, stride=1, padding=1, dilation=
                   dilation=dilation, groups=groups)
 
 
-class SWHDCModule(nn.Module):
+class SWHDCBlock(nn.Module):
     def __init__(self, input_size, n_conv, kernel_size, n_kernels, stride, padding):
-        super(SWHDCModule, self).__init__()
+        super(SWHDCBlock, self).__init__()
         self.input_size = input_size
         self.n_conv = n_conv
         self.kernel_size = kernel_size
